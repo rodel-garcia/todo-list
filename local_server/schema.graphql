@@ -1,7 +1,49 @@
+type Task {
+  id: ID!
+  name: String!
+  priority: Priority
+  completed: Boolean
+}
+
+enum Priority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}
+
+enum SortOption {
+  NAME
+  PRIORITY
+}
+
+input NewTaskParam {
+  name: String!
+  description: String
+  priority: Priority
+}
+
+input TaskCompletionParam {
+  id: ID!
+  completed: Boolean!
+}
+
+input TaskSortParam {
+  direction: SortDirection!
+  sortBy: SortOption!
+}
+
 type Query {
-  hello: String
+  getTasks(sort: TaskSortParam): [Task]!
+  getTask(id: ID!): Task
 }
 
 type Mutation {
-  addNew(id: String): String
+  addNewTask(newTaskParam: NewTaskParam): ID
+  deleteTask(id: ID): Boolean
+  updateTaskCompletion(updateParam: TaskCompletionParam!): Boolean
 }
