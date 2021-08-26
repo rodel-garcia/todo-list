@@ -14,11 +14,15 @@ import {
   TaskPriorityResponse,
 } from '../../../app.definitions';
 
+type TaskCompletionChange = (id: string, isTaskCompleted: boolean) => void;
+type TaskPriorityChange = (id: string, priority: Priority) => void;
+type TaskDelete = (id: string) => void;
+
 const TodoListTableAction: React.FC<{
   task: Task;
-  taskCompletionChange: Function;
-  taskPriorityChange: Function;
-  taskDelete: Function;
+  taskCompletionChange: TaskCompletionChange;
+  taskPriorityChange: TaskPriorityChange;
+  taskDelete: TaskDelete;
 }> = ({ task, taskCompletionChange, taskPriorityChange, taskDelete }) => {
   const history = useHistory();
   const [isMenuVisible, setMenuVisibility] = useState(false);

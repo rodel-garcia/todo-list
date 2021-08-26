@@ -6,7 +6,7 @@ import { GRAPHQL_SERVICE_URL } from './app/app.constants';
 import App from './app/app';
 import './index.css';
 
-const apolloClient = new ApolloClient({
+export const apolloClient = new ApolloClient({
   uri: GRAPHQL_SERVICE_URL,
   cache: new InMemoryCache(),
 });

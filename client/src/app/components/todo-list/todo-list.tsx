@@ -30,6 +30,7 @@ const TodoList: React.FC<{
     onCompleted: ({ getTasks }) => {
       setTaskList(getTasks);
     },
+    fetchPolicy: 'network-only',
   });
 
   const [addNewTask] = useMutation<AddNewTaskResponse>(ADD_NEW_TASK, {

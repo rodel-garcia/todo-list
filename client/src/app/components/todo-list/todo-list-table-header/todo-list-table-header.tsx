@@ -41,30 +41,38 @@ const TodoListTableHeader: React.FC<{
   return (
     <thead>
       <tr>
-        <th
-          className={`sorted ${
-            currentSort.direction === SortDirection.DESC &&
+        <TableHead
+          text='Name'
+          isAscending={
+            currentSort.direction === SortDirection.ASC &&
             currentSort.sortBy === SortOption.NAME
-              ? 'descending'
-              : 'ascending'
-          }`}
-          onClick={() => onTableHeaderClick(SortOption.NAME)}
-        >
-          Name
-        </th>
-        <th>Description</th>
-        <th
-          className={`sorted center aligned' ${
-            currentSort.direction === SortDirection.DESC &&
+          }
+          clickHandler={() => onTableHeaderClick(SortOption.NAME)}
+        />
+        <TableHead
+          text='Description'
+          isAscending={
+            currentSort.direction === SortDirection.ASC &&
+            currentSort.sortBy === SortOption.DESCRIPTION
+          }
+          clickHandler={() => onTableHeaderClick(SortOption.DESCRIPTION)}
+        />
+        <TableHead
+          text='Priority'
+          isAscending={
+            currentSort.direction === SortDirection.ASC &&
             currentSort.sortBy === SortOption.PRIORITY
-              ? 'descending'
-              : 'ascending'
-          }`}
-          onClick={() => onTableHeaderClick(SortOption.PRIORITY)}
-        >
-          Priority
-        </th>
-        <th className='ui center aligned'>Completed</th>
+          }
+          clickHandler={() => onTableHeaderClick(SortOption.PRIORITY)}
+        />
+        <TableHead
+          text='Completed'
+          isAscending={
+            currentSort.direction === SortDirection.ASC &&
+            currentSort.sortBy === SortOption.COMPLETED
+          }
+          clickHandler={() => onTableHeaderClick(SortOption.COMPLETED)}
+        />
         <th></th>
       </tr>
     </thead>
@@ -72,3 +80,18 @@ const TodoListTableHeader: React.FC<{
 };
 
 export default TodoListTableHeader;
+
+const TableHead: React.FC<{
+  text: string;
+  isAscending: boolean;
+  clickHandler: () => void;
+}> = ({ text, isAscending, clickHandler }) => {
+  return (
+    <th
+      onClick={() => clickHandler()}
+      className={`sorted ${!isAscending ? 'descending' : 'ascending'}`}
+    >
+      {text}
+    </th>
+  );
+};

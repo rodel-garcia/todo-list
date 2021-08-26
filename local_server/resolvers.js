@@ -61,7 +61,11 @@ module.exports = {
 function applySort(a, b, sortparam) {
   const { sortBy, direction } = sortparam;
   const prop = sortBy.toLowerCase();
-  const [firt, second] = [a[prop].toLowerCase(), b[prop].toLowerCase()];
+  const [firt, second] =
+    prop === 'completed'
+      ? [a[prop] ? 'yes' : 'no', b[prop] ? 'yes' : 'no']
+      : [a[prop].toLowerCase(), b[prop].toLowerCase()];
+
   return direction === 'ASC'
     ? firt > second
       ? 1

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently --kill-others \"npm run serve:client\" \"npm run serve:local-server\"",
+    "test": "cd client && npm run test",
     "postinstall": "node install-packages.js",
     "serve:client": "cd client && npm start",
     "serve:local-server": "cd local_server && npm start"

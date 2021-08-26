@@ -21,6 +21,8 @@ enum SortDirection {
 enum SortOption {
   NAME
   PRIORITY
+  DESCRIPTION
+  COMPLETED
 }
 
 input NewTaskParam {

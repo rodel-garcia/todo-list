@@ -60,6 +60,7 @@ const AddNewForm: React.FC<{
             }
             ref={nameFieldRef}
             autoFocus
+            autoComplete='off'
           />
         </div>
         <div
@@ -76,6 +77,7 @@ const AddNewForm: React.FC<{
             onChange={(e) => setDesciption(e.target.value)}
             value={description}
             rows={5}
+            autoComplete='of'
           ></textarea>
         </div>
         <div className='field'>

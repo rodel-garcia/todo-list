@@ -1,17 +1,17 @@
 import TodoListTableAction from '../todo-list-table-cell-actions/todo-list-table-cell-actions';
-import { Priority, Task } from '../../../app.definitions';
+import { Priority, SetTaskList, Task } from '../../../app.definitions';
 import style from './todo-list-table-body.module.scss';
 
 const TodoListTableBody: React.FC<{
   taskList: Task[];
-  setTaskList: Function;
+  setTaskList: SetTaskList;
 }> = ({ taskList, setTaskList }) => {
-  const tasks = [...taskList];
+  let tasks = [...taskList];
 
   const taskDeletionhandler = (id: string) => {
     const idx = tasks.findIndex((task) => id === task.id);
     tasks.splice(idx, 1);
-    setTaskList(() => [...tasks]);
+    setTaskList([...tasks]);
   };
   const taskCompletionhandler = (id: string, isCompleted: boolean) => {
     const newTasks = tasks.reduce((acc, task, idx) => {
@@ -21,7 +21,7 @@ const TodoListTableBody: React.FC<{
       }
       return acc;
     }, [] as Task[]);
-    setTaskList(() => [...newTasks]);
+    setTaskList([...newTasks]);
   };
   const taskPriorityhandler = (id: string, priority: Priority) => {
     const newTasks = tasks.reduce((acc, task, idx) => {
@@ -31,7 +31,7 @@ const TodoListTableBody: React.FC<{
       }
       return acc;
     }, [] as Task[]);
-    setTaskList(() => [...newTasks]);
+    setTaskList([...newTasks]);
   };
 
   return (

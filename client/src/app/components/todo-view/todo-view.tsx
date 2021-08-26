@@ -8,6 +8,7 @@ import style from './todo-view.module.scss';
 const TodoView: React.FC = () => {
   const match: MatchParam | null = useRouteMatch('/tasks/:id');
   const { data, loading, error } = useQuery<GetTaskResponse>(GET_TASK, {
+    fetchPolicy: 'network-only',
     variables: { id: match?.params.id },
   });
 

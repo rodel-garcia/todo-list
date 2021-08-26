@@ -74,9 +74,11 @@ export enum SortDirection {
 export enum SortOption {
   NAME = 'NAME',
   PRIORITY = 'PRIORITY',
+  DESCRIPTION = 'DESCRIPTION',
+  COMPLETED = 'COMPLETED',
 }
 
 // function types
-export type SetTaskList = (tasks: Task[]) => void;
+export type SetTaskList = (tasks: Task[] | (() => Task[])) => void;
 export type PopupSetter = (show: boolean) => void;
 export type AddNewTask = (param: NewTaskParam) => void;
