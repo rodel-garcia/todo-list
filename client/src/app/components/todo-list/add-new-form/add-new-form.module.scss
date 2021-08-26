@@ -1,0 +1,13 @@
+.todo-form {
+  width: 30rem;
+  padding: 1.5rem;
+
+  form {
+    padding-top: 1rem;
+
+    .form-action {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}

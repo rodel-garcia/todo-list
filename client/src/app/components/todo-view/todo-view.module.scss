@@ -1,0 +1,19 @@
+.todo-view {
+  > div {
+    margin-top: 3rem;
+
+    h4 {
+      margin: 0;
+      padding-left: 1rem;
+      color: #0044ff;
+    }
+
+    span {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      display: block;
+      margin-top: 2rem;
+      padding-left: 3rem;
+    }
+  }
+}

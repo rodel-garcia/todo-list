@@ -1,0 +1,17 @@
+.main-header {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  .detail-header {
+    display: flex;
+    align-items: center;
+
+    button {
+      box-shadow: none !important;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.todo-list {
+  .tasks-details {
+    display: flex;
+    justify-content: flex-end;
+
+    span:first-child {
+      margin-right: 2rem;
+    }
+  }
+  table {
+    width: 100%;
+    tr {
+      user-select: none;
+    }
+  }
+}

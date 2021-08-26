@@ -1,0 +1,20 @@
+tbody {
+  tr {
+    td {
+      max-width: 10%;
+      &.description-cell {
+        max-width: 35%;
+      }
+      &.name-cell {
+        max-width: 15%;
+      }
+      span {
+        max-width: 20rem;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
