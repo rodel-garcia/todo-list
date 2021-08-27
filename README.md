@@ -6,16 +6,15 @@ Basic app just to demonstrate knowledege in specific technologies.
 
 https://user-images.githubusercontent.com/4024589/131122145-4ea3c5a3-5935-41ef-9327-d728e488b41c.mp4
 
-**NOTE**: This app not using any database, it only save data in memory. 
+**NOTE**: This app is not using any database, it only save data in memory. 
 
 ----------------------
 Implementation Details
 ----------------------
 
-This app use the following technology in order to meet requirements.
-
 ![image](https://user-images.githubusercontent.com/4024589/131126649-9a12e86d-7a8b-4ba1-ae8d-d907a0cb8afc.png)
 
+This following technology is use in order to meet requirements.
 
 - Client:
   - [reactjs 17.2](https://reactjs.org/) (create-react-app w/ typescript template)
@@ -23,7 +22,7 @@ This app use the following technology in order to meet requirements.
   - [semantic ui 2.4](https://semantic-ui.com/)
   - [node-sass 6.0](https://github.com/sass/node-sass)
   - [@apollo-client 3.4](https://www.apollographql.com/docs/react)
-  -
+  
 - Server:
   - [nodejs 14.15](https://nodejs.org/)
   - [apollo-server-express 3.1](https://www.npmjs.com/package/apollo-server-express)
@@ -36,7 +35,7 @@ This app use the following technology in order to meet requirements.
 Installation
 -------------
 
-Please make the machine to have nodejs 14 and git installded.
+Please make the machine to have nodejs 14 and git installed.
 
 1. Clone this project: 
 ```
@@ -52,12 +51,15 @@ npm install
 
 **NOTE** This app is using [concurrently](https://www.npmjs.com/package/concurrently) to run both `client` and `server` in single instance.
 
+- client: http://localhost:3000/tasks
+- backend: http://localhost:4000/graphql
+
 -------
 Testing
 -------
 
 from the root directory just simply run `npm run test`.
-it only run *component test* implemented in client / frontend side, there's no test implemented for local_server / backend.
+it only runs **component testing** implemented in client / frontend side, there's no test implemented for local_server / backend.
 
 ---------------
 Troubleshooting
@@ -67,12 +69,10 @@ Troubleshooting
 ```
 cd client
 npm install
-```
 
-and
 
-```
 cd local_server
 npm install
 ```
+
 
